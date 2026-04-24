@@ -1,0 +1,9 @@
+/riscv64_gcc14.3.0_glibc2.38.0_fp-mathvec-vla/riscv64-unknown-linux-gnu/libc/lib64/lp64d# riscv64-unknown-linux-gnu-nm libmvec.so.1 | grep ZGV
+00000000000006d8 T _ZGVr1Nxv_exp
+0000000000000dba T _ZGVr1Nxv_log
+00000000000007e2 T _ZGVr2Nxv_exp
+000000000000103a T _ZGVr2Nxv_log
+00000000000008ec T _ZGVr4Nxv_exp
+00000000000012ca T _ZGVr4Nxv_log
+0000000000000a9c T _ZGVr8Nxv_exp
+0000000000001556 T _ZGVr8Nxv_log

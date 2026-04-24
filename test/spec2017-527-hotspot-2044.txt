@@ -1,0 +1,728 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 25.64     15.27    15.27     3456     0.00     0.00  __radae_MOD_radabs.constprop.0
+  5.94     18.81     3.54                             logf64
+  5.61     22.15     3.34                             cosp_types.fppized.f90.70fc5fb1
+  4.76     24.98     2.84                             expf64
+  2.75     26.62     1.64        6     0.27     0.27  __tracer_data_MOD_interpolate_trcdata.constprop.0
+  2.67     28.21     1.59                             powf32x
+  2.53     29.72     1.51                             memset
+  1.80     30.79     1.07                             _ZGVr2Nxv_exp
+  1.75     31.83     1.04    10368     0.00     0.00  __cldwat_MOD_pcond.constprop.0
+  1.68     32.83     1.00                             cosp_lidar.fppized.f90.75697814
+  1.63     33.80     0.97     3456     0.00     0.00  __radae_MOD_radems.constprop.0
+  1.38     34.62     0.82    10368     0.00     0.00  __zm_conv_MOD_zm_convr
+  1.35     35.42     0.81                             _ZGVr2Nxv_log
+  1.24     36.16     0.74                             bcmp
+  1.21     36.88     0.72       13     0.06     0.06  __m_router_MOD_initp_
+  1.16     37.57     0.69  2680917     0.00     0.00  __zm_conv_MOD_ientropy.isra.0
+  1.12     38.24     0.67    10296     0.00     0.00  __mapz_module_MOD_ppm2m.lto_priv.0
+  1.07     38.88     0.64    65664     0.00     0.00  __wv_saturation_MOD_vqsatd2_water_single.isra.0
+  1.06     39.51     0.63                             log10f32x
+  1.01     40.11     0.60   359424     0.00     0.00  __radae_MOD_trcabn.lto_priv.0
+  0.96     40.68     0.57     2106     0.00     0.00  __tp_core_MOD_ytp
+  0.94     41.24     0.56  3227904     0.00     0.00  __cam_history_MOD_outfld.constprop.0
+  0.91     41.78     0.54        4     0.14     0.14  __phys_buffer_MOD_pbuf_allocate
+  0.87     42.30     0.52                             __ieee754_log10
+  0.86     42.81     0.51   221184     0.00     0.00  __physics_types_MOD_physics_update.constprop.0
+  0.82     43.30     0.49        3     0.16     0.16  __dp_coupling_MOD_d_p_coupling.constprop.0
+  0.79     43.77     0.47       12     0.04     0.24  cd_core_.constprop.0
+  0.55     44.10     0.33     1794     0.00     0.00  __tp_core_MOD_tp2d
+  0.55     44.43     0.33                             asinf32x
+  0.52     44.74     0.31                             cosp.fppized.f90.9bd52ea7
+  0.50     45.04     0.30                             cospsimulator_intr.fppized.f90.aaa624d1
+  0.50     45.34     0.30  4242528     0.00     0.00  __cam_history_MOD_get_masterlist_indx.constprop.0
+  0.49     45.63     0.29        3     0.10     0.45  te_map_.constprop.0
+  0.47     45.91     0.28     3042     0.00     0.00  __tp_core_MOD_xtpv
+  0.45     46.18     0.27                             cosp_simulator.fppized.f90.f7be94b1
+  0.44     46.44     0.26                             m_ExchangeMaps.fppized.f90.61575323
+  0.44     46.70     0.26    41472     0.00     0.00  __cloud_fraction_MOD_cldfrc.constprop.0.isra.0
+  0.43     46.96     0.26                             feenableexcept
+  0.40     47.20     0.24     6840     0.00     0.00  __mapz_module_MOD_map1_ppm.constprop.0
+  0.40     47.44     0.24                             cosp_misr_simulator.fppized.f90.fd3484c3
+  0.40     47.68     0.24        6     0.04     0.35  __tracer_data_MOD_advance_trcdata
+  0.39     47.91     0.23    10368     0.00     0.00  __zm_conv_intr_MOD_zm_conv_tend.constprop.0
+  0.37     48.13     0.22    24192     0.00     0.00  __aer_rad_props_MOD_get_nonhygro_rad_props.isra.0
+  0.37     48.35     0.22    10368     0.00     0.00  __cam_diagnostics_MOD_diag_phys_writeout
+  0.37     48.57     0.22    10368     0.00     0.00  tphysbc_.constprop.0
+  0.35     48.78     0.21   228096     0.00     0.00  __interpolate_data_MOD_lininterp_init.constprop.0
+  0.35     48.99     0.21      312     0.00     0.00  __sw_core_MOD_d_sw.constprop.0
+  0.35     49.20     0.21        3     0.07     1.60  __dyn_comp_MOD_dyn_run.constprop.0
+  0.34     49.40     0.20    10368     0.00     0.00  __zm_conv_MOD_buoyan_dilute.constprop.0
+  0.33     49.59     0.20                             fmod
+  0.32     49.78     0.19     4368     0.00     0.00  fft991_.constprop.0
+  0.32     49.97     0.19        3     0.06     2.47  __physpkg_MOD_phys_run1.constprop.0
+  0.32     50.16     0.19                             rad_constituents.fppized.f90.8e0f533d
+  0.32     50.35     0.19   232116     0.00     0.00  __tp_core_MOD_xmist
+  0.32     50.54     0.19   106764     0.00     0.00  __tp_core_MOD_fxppm
+  0.32     50.73     0.19                             conv_water.fppized.f90.32847dd0
+  0.30     50.91     0.18                             cosp_stats.fppized.f90.d4a4afbc
+  0.29     51.08     0.17      236     0.00     0.00  getNCv_double.lto_priv.0
+  0.29     51.25     0.17                             cosp_isccp_simulator.fppized.f90.eed88403
+  0.29     51.42     0.17                             m_ConvertMaps.fppized.f90.dadaf459
+  0.28     51.59     0.17        1     0.17     0.17  __radae_MOD_initialize_radbuffer
+  0.27     51.75     0.16   103680     0.00     0.00  __wv_saturation_MOD_aqsat.constprop.0
+  0.27     51.91     0.16      312     0.00     0.00  __sw_core_MOD_c_sw.constprop.0
+  0.25     52.06     0.15   425088     0.00     0.00  __physics_types_MOD_physics_ptend_reset
+  0.25     52.21     0.15    10368     0.00     0.00  __hk_conv_MOD_cmfmca.constprop.0
+  0.25     52.36     0.15                             modis_simulator.fppized.f90.3680effe
+  0.24     52.50     0.15    31104     0.00     0.00  __physics_types_MOD_physics_state_copy
+  0.24     52.64     0.14    10368     0.00     0.00  __convect_shallow_MOD_convect_shallow_tend.constprop.0
+  0.24     52.78     0.14        1     0.14     0.43  __physpkg_MOD_phys_init.constprop.0
+  0.24     52.92     0.14   279936     0.00     0.00  qneg3_.constprop.0
+  0.22     53.05     0.13                             cosp_modis_simulator.fppized.f90.5023f105
+  0.22     53.18     0.13     6912     0.00     0.00  tphysac_.constprop.0
+  0.22     53.31     0.13                             interpolate_data.fppized.f90.e661b717
+  0.20     53.43     0.12  4243744     0.00     0.00  __cam_history_MOD_gen_hash_key.constprop.0
+  0.20     53.55     0.12    20736     0.00     0.00  __pkg_cld_sediment_MOD_getflx.constprop.0
+  0.20     53.67     0.12                             malloc
+  0.20     53.79     0.12                             diffusion_solver.fppized.f90.d7204150
+  0.19     53.91     0.12        2     0.06     0.06  __dp_coupling_MOD_p_d_coupling.constprop.0
+  0.19     54.02     0.12                             memmove
+  0.18     54.13     0.11                             physics_types.fppized.f90.3564a8dc
+  0.18     54.24     0.11                             read
+  0.17     54.34     0.10   108102     0.00     0.00  __tp_core_MOD_lmppm
+  0.17     54.44     0.10    20736     0.00     0.00  __zm_conv_MOD_convtran.constprop.0
+  0.17     54.54     0.10    20736     0.00     0.00  __zm_conv_MOD_zm_conv_evap.constprop.0
+  0.17     54.64     0.10        3     0.03     0.10  trac2d_.constprop.0
+  0.17     54.74     0.10                             wv_saturation.fppized.f90.4edd7247
+  0.16     54.84     0.10    65664     0.00     0.00  __check_energy_MOD_check_energy_chng.constprop.0
+  0.15     54.93     0.09   267696     0.00     0.00  __mapz_module_MOD_kmppm
+  0.15     55.02     0.09    10368     0.00     0.00  __radiation_MOD_radiation_tend.isra.0
+  0.15     55.11     0.09      312     0.00     0.00  __sw_core_MOD_d2a2c_winds.constprop.0
+  0.15     55.20     0.09                             param_cldoptics.fppized.f90.f5b0d8b9
+  0.15     55.29     0.09    69120     0.00     0.00  __cmparray_mod_MOD_cmpdaynite_3d_r_copy.constprop.0
+  0.15     55.38     0.09                             cosp_utils.fppized.f90.454e19b2
+  0.13     55.46     0.08     2184     0.00     0.00  __pft_module_MOD_pft2d
+  0.13     55.54     0.08       24     0.00     0.00  geopk_.constprop.0
+  0.13     55.62     0.08                             _gfortran_compare_string
+  0.13     55.70     0.08                             getrlimit64
+  0.13     55.78     0.08                             m_GlobalToLocal.fppized.f90.933d8414
+  0.13     55.86     0.08                             radae.fppized.f90.74978dca
+  0.12     55.93     0.07        7     0.01     0.01  pkez_.constprop.0
+  0.12     56.00     0.07     3456     0.00     0.00  __radsw_MOD_radcswmx.isra.0
+  0.12     56.07     0.07        3     0.02     0.38  __prescribed_aero_MOD_prescribed_aero_adv.constprop.0
+  0.12     56.14     0.07        1     0.07     0.07  dyn_create_interface.3.constprop.0
+  0.12     56.21     0.07                             m_mall.fppized.f90.c919d563
+  0.12     56.28     0.07                             modal_aer_opt.fppized.f90.502207d8
+  0.12     56.35     0.07                             shr_stream_mod.fppized.f90.9c8cd8f4
+  0.10     56.41     0.06   228107     0.00     0.00  __phys_prop_MOD_physprop_get.constprop.0
+  0.10     56.47     0.06    20736     0.00     0.00  __diffusion_solver_MOD_vd_lu_decomp.constprop.0
+  0.10     56.53     0.06    10368     0.00     0.00  __cam_diagnostics_MOD_diag_conv.constprop.0
+  0.10     56.59     0.06      624     0.00     0.00  __tp_core_MOD_ycc
+  0.10     56.65     0.06       47     0.00     0.00  __m_attrvect_MOD_copy_.constprop.0
+  0.10     56.71     0.06       28     0.00     0.00  __m_rearranger_MOD_rearrange_
+  0.10     56.77     0.06                             _gfortrani_internal_pack_r8
+  0.10     56.83     0.06                             free
+  0.10     56.89     0.06                             phys_control.fppized.f90.33ab2e5b
+  0.10     56.95     0.06                             seq_io_mod.fppized.f90.52927ac5
+  0.09     57.00     0.06                             _ZGVr1Nxv_log
+  0.08     57.05     0.05    10368     0.00     0.00  __pkg_cld_sediment_MOD_cld_sediment_tend.constprop.0
+  0.08     57.10     0.05     6912     0.00     0.00  __diffusion_solver_MOD_compute_vdiff.constprop.0
+  0.08     57.15     0.05      858     0.00     0.00  __tp_core_MOD_tp2c.constprop.0
+  0.08     57.20     0.05      624     0.00     0.00  __tp_core_MOD_tp2c
+  0.08     57.25     0.05       53     0.00     0.00  __m_attrvect_MOD_zero_.constprop.0
+  0.08     57.30     0.05                             __ieee754_acos
+  0.08     57.35     0.05                             _gfortran_spread_char4_scalar
+  0.08     57.40     0.05                             _gfortrani_reshape_packed
+  0.08     57.45     0.05                             lmd_ipsl_stats.fppized.f90.cb29d7c0
+  0.08     57.50     0.05                             memcpy
+  0.07     57.54     0.04   310458     0.00     0.00  __wv_saturation_MOD_vqsatd
+  0.07     57.58     0.04    20736     0.00     0.00  __tropopause_MOD_tropopause_findusing
+  0.07     57.62     0.04    13824     0.00     0.00  __interpolate_data_MOD_vertinterp
+  0.07     57.66     0.04    10368     0.00     0.00  __aerosol_intr_MOD_aerosol_wet_intr.constprop.0
+  0.07     57.70     0.04       20     0.00     0.00  __rearrange_MOD_rearrange_io2comp_double.constprop.0.isra.0
+  0.07     57.74     0.04        3     0.01     0.01  __cam_pio_utils_MOD_get_phys_ldof.constprop.0
+  0.07     57.78     0.04                             _int_free
+  0.07     57.82     0.04                             _int_malloc
+  0.07     57.86     0.04                             fegetexcept
+  0.06     57.90     0.04                             cosf32x
+  0.06     57.93     0.04                             sinf32x
+  0.05     57.96     0.03   152064     0.00     0.00  __rad_constituents_MOD_rad_cnst_get_aer_props_by_idx.constprop.0
+  0.05     57.99     0.03    86400     0.00     0.00  __cmparray_mod_MOD_expdaynite_3d_r.constprop.0
+  0.05     58.02     0.03    10368     0.00     0.00  __sslt_rebin_MOD_sslt_rebin_adv.constprop.0
+  0.05     58.05     0.03    10368     0.00     0.00  __stratiform_MOD_stratiform_tend.constprop.0.isra.0
+  0.05     58.08     0.03       12     0.00     0.00  __m_attrvect_MOD_permute_.constprop.0
+  0.05     58.11     0.03        6     0.01     0.01  __advect_tend_MOD_compute_adv_tends_xyz
+  0.05     58.14     0.03        1     0.03     0.03  __cam_history_MOD_intht
+  0.05     58.17     0.03                             _ZGVr1Nxv_exp
+  0.05     58.20     0.03                             _ZGVr4Nxv_log
+  0.05     58.23     0.03                             __malloc_fork_unlock_child
+  0.05     58.26     0.03                             _gfortran_concat_string
+  0.05     58.29     0.03                             _gfortrani_memcmp_char4
+  0.05     58.32     0.03                             _gfortrani_xmalloc
+  0.05     58.35     0.03                             array_lib.f90.994be703
+  0.05     58.38     0.03                             history_defaults.fppized.f90.68b6895b
+  0.05     58.41     0.03                             radiation_data.fppized.f90.7e13cf34
+  0.05     58.44     0.03                             sysmalloc
+  0.04     58.47     0.03   319968     0.00     0.00  __cam_history_MOD_outfld
+  0.04     58.49     0.03    31104     0.00     0.00  __physics_types_MOD_physics_tend_init
+  0.04     58.52     0.03                             __scalbn
+  0.03     58.54     0.02   907593     0.00     0.00  __zm_conv_MOD_entropy.isra.0
+  0.03     58.56     0.02    27648     0.00     0.00  __rad_constituents_MOD_rad_cnst_get_gas.constprop.0
+  0.03     58.58     0.02    20736     0.00     0.00  __cam_history_buffers_MOD_hbuf_accum_inst.constprop.0
+  0.03     58.60     0.02    10368     0.00     0.00  __zm_conv_intr_MOD_zm_conv_tend_2.constprop.0
+  0.03     58.62     0.02     6912     0.00     0.00  __hb_diff_MOD_compute_hb_diff.constprop.0.isra.0
+  0.03     58.64     0.02     6912     0.00     0.00  __vertical_diffusion_MOD_vertical_diffusion_tend.constprop.0.isra.0
+  0.03     58.66     0.02      528     0.00     0.00  __cam_history_MOD_addfld.constprop.0
+  0.03     58.68     0.02      234     0.00     0.00  __fill_module_MOD_filew.constprop.0
+  0.03     58.70     0.02      102     0.00     0.00  __repro_sum_mod_MOD_repro_sum_int.lto_priv.0
+  0.03     58.72     0.02       64     0.00     0.00  __repro_sum_mod_MOD_repro_sum.constprop.0
+  0.03     58.74     0.02       10     0.00     0.00  __m_globalsegmap_MOD_orderedpoints_
+  0.03     58.76     0.02        4     0.01     0.01  __atm_comp_mct_MOD_atm_export_mct.constprop.0
+  0.03     58.78     0.02        4     0.01     0.01  __phys_buffer_MOD_pbuf_get_fld_idx.constprop.1
+  0.03     58.80     0.02        3     0.01     0.01  __diag_module_MOD_compute_vdot_gradp
+  0.03     58.82     0.02        1     0.02     0.02  __physconst_MOD_physconst_init
+  0.03     58.84     0.02                             aer_rad_props.fppized.f90.33e46285
+  0.03     58.86     0.02                             cam_pio_utils.fppized.f90.a9177f00
+  0.03     58.88     0.02                             mprotect
+  0.03     58.90     0.02                             scamMod.fppized.f90.4df6e7f8
+  0.03     58.92     0.02                             wrap_nf.fppized.f90.273da515
+  0.03     58.93     0.02    13024     0.00     0.00  quick_sort_1.1.lto_priv.0
+  0.02     58.94     0.01   375047     0.00     0.00  normalize_basetime_
+  0.02     58.95     0.01   208024     0.00     0.00  timegetmonth_
+  0.02     58.96     0.01   152073     0.00     0.00  __constituents_MOD_cnst_get_ind.constprop.1
+  0.02     58.97     0.01   103680     0.00     0.00  __physics_types_MOD_physics_ptend_sum.isra.0
+  0.02     58.98     0.01    76032     0.00     0.00  __rad_constituents_MOD_rad_cnst_get_aer_mmr_by_idx.constprop.0.isra.0
+  0.02     58.99     0.01    72865     0.00     0.00  __esmf_timeintervalmod_MOD_timeintchecknormalized.constprop.0
+  0.02     59.00     0.01    55296     0.00     0.00  __interpolate_data_MOD_lininterp2d1d.constprop.0
+  0.02     59.01     0.01    41472     0.00     0.00  __diffusion_solver_MOD_vd_lu_solve.constprop.0
+  0.02     59.02     0.01    24196     0.00     0.00  __time_manager_MOD_get_curr_calday
+  0.02     59.03     0.01    17472     0.00     0.00  vpassm_.isra.0
+  0.02     59.04     0.01    13610     0.00     0.00  px_get
+  0.02     59.05     0.01     9805     0.00     0.00  __zm_conv_MOD_closure.constprop.0.isra.0
+  0.02     59.06     0.01     6912     0.00     0.00  __cam_diagnostics_MOD_diag_phys_tend_writeout.constprop.0
+  0.02     59.07     0.01       28     0.00     0.00  __polar_avg_MOD_polar_average3d
+  0.02     59.08     0.01       14     0.00     0.00  MPI_Group_translate_ranks.isra.0
+  0.02     59.09     0.01        6     0.00     0.00  __mct_mod_MOD_mct_avect_vecmult.constprop.0
+  0.02     59.10     0.01        6     0.00     0.00  __rearrange_MOD_rearrange_create_box_.isra.0
+  0.02     59.11     0.01        3     0.00     0.00  __m_mergesorts_MOD_setn_.constprop.0
+  0.02     59.12     0.01        3     0.00     0.00  __phys_gmean_MOD_gmean_arr
+  0.02     59.13     0.01        3     0.00     0.36  __prescribed_ozone_MOD_prescribed_ozone_adv.constprop.0
+  0.02     59.14     0.01        2     0.01     0.01  __atm_comp_mct_MOD_atm_import_mct.constprop.0
+  0.02     59.15     0.01        2     0.01     0.01  __rearrange_MOD_rearrange_comp2io_double.constprop.0.isra.0
+  0.02     59.16     0.01        1     0.01     9.21  __atm_comp_mct_MOD_atm_run_mct.constprop.0
+  0.02     59.17     0.01        1     0.01     0.02  __cam_diagnostics_MOD_diag_init
+  0.02     59.18     0.01        1     0.01     0.01  __camsrfexch_types_MOD_hub2atm_alloc.constprop.0
+  0.02     59.19     0.01        1     0.01     0.04  __inidat_MOD_read_inidat.constprop.0
+  0.02     59.20     0.01        1     0.01     0.08  __physpkg_MOD_phys_inidat.lto_priv.0
+  0.02     59.21     0.01        1     0.01     0.02  __seq_flux_mct_MOD_seq_flux_atmocn_mct
+  0.02     59.22     0.01        1     0.01     0.01  __shr_flux_mod_MOD_shr_flux_atmocn
+  0.02     59.23     0.01        1     0.01     0.02  __stepon_MOD_stepon_init.constprop.0
+  0.02     59.24     0.01                             _gfortran_select_string
+  0.02     59.25     0.01                             _gfortran_string_trim
+  0.02     59.26     0.01                             _wordcopy_fwd_aligned
+  0.02     59.27     0.01                             aerosol_intr.fppized.f90.f1406be8
+  0.02     59.28     0.01                             argz_create_sep
+  0.02     59.29     0.01                             camsrfexch_types.fppized.f90.e0d7cdfa
+  0.02     59.30     0.01                             cbrtf64
+  0.02     59.31     0.01                             chemistry.fppized.f90.721215b6
+  0.02     59.32     0.01                             cmparray_mod.fppized.f90.74787b80
+  0.02     59.33     0.01                             decompmodule.fppized.f90.1ccdcc04
+  0.02     59.34     0.01                             error_messages.fppized.f90.0bd9eac1
+  0.02     59.35     0.01                             fv_prints.fppized.f90.0f27dd40
+  0.02     59.36     0.01                             ghg_data.fppized.f90.06598796
+  0.02     59.37     0.01                             ldexpf32x
+  0.02     59.38     0.01                             llnl_stats.fppized.f90.0f6976fe
+  0.02     59.39     0.01                             m_SparseMatrixToMaps.fppized.f90.4f8e6439
+  0.02     59.40     0.01                             m_Transfer.fppized.f90.62ffa0c5
+  0.02     59.41     0.01                             malloc_consolidate
+  0.02     59.42     0.01                             mmap
+  0.02     59.43     0.01                             mo_flbc.fppized.f90.6d7c3d86
+  0.02     59.44     0.01                             phys_gmean.fppized.f90.1c78ec7c
+  0.02     59.45     0.01                             pionfwrite_mod.fppized.f90.202700f7
+  0.02     59.46     0.01                             radheat.fppized.f90.fc2c5c1d
+  0.02     59.47     0.01                             ref_pres.fppized.f90.06750d2a
+  0.02     59.48     0.01                             sat_hist.fppized.f90.b43bb0b2
+  0.02     59.49     0.01                             seq_comm_mct.fppized.f90.0b75dc2d
+  0.02     59.50     0.01                             seq_drydep_mod.fppized.f90.0b3f017a
+  0.02     59.51     0.01                             shr_mct_mod.fppized.f90.943ee994
+  0.02     59.52     0.01                             sincos
+  0.02     59.53     0.01                             systrim.constprop.0
+  0.02     59.54     0.01                             time_utils.fppized.f90.54e1922b
+  0.01     59.55     0.01    13826     0.00     0.00  __shr_orb_mod_MOD_shr_orb_decl
+  0.01     59.55     0.01        2     0.00     0.00  __cam_history_MOD_wrapup
+  0.01     59.56     0.01        1     0.01     0.01  __solar_data_MOD_solar_data_init
+  0.01     59.56     0.01                             __libc_assert_fail
+  0.00     59.56     0.00  1154309     0.00     0.00  __constituents_MOD_cnst_get_ind.constprop.0
+  0.00     59.56     0.00   827098     0.00     0.00  seccmp_.isra.0
+  0.00     59.56     0.00   228096     0.00     0.00  __interpolate_data_MOD_lininterp_finish
+  0.00     59.56     0.00   218712     0.00     0.00  __esmf_basetimemod_MOD_esmf_basetimesum
+  0.00     59.56     0.00   152000     0.00     0.00  __phys_prop_MOD_lin_interpol.constprop.0.isra.0
+  0.00     59.56     0.00    82944     0.00     0.00  __tropopause_MOD_tropopause_interpolatet.isra.0
+  0.00     59.56     0.00    82944     0.00     0.00  __tropopause_MOD_tropopause_interpolatez.isra.0
+  0.00     59.56     0.00    76000     0.00     0.00  __phys_prop_MOD_exp_interpol.constprop.0.isra.0
+  0.00     59.56     0.00    72749     0.00     0.00  normalize_timeint_
+  0.00     59.56     0.00    66149     0.00     0.00  normalize_time_
+  0.00     59.56     0.00    62212     0.00     0.00  __chem_surfvals_MOD_chem_surfvals_get
+  0.00     59.56     0.00    48384     0.00     0.00  __diffusion_solver_MOD_diffuse.constprop.0
+  0.00     59.56     0.00    41628     0.00     0.00  __esmf_timemod_MOD_esmf_timeinc
+  0.00     59.56     0.00    41489     0.00     0.00  __cam_history_MOD_inifld.constprop.0.isra.0
+  0.00     59.56     0.00    31104     0.00     0.00  __cam_history_MOD_hist_fld_active
+  0.00     59.56     0.00    31104     0.00     0.00  __radiation_MOD_radiation_do
+  0.00     59.56     0.00    27677     0.00     0.00  __time_manager_MOD_get_curr_date.constprop.0
+  0.00     59.56     0.00    24291     0.00     0.00  __esmf_timemod_MOD_esmf_timediff
+  0.00     59.56     0.00    20736     0.00     0.00  __dust_sediment_mod_MOD_cfdotmc_pro.isra.0
+  0.00     59.56     0.00    20736     0.00     0.00  __pkg_cldoptics_MOD_reltab.isra.0
+  0.00     59.56     0.00    20736     0.00     0.00  __tropopause_MOD_tropopause_find
+  0.00     59.56     0.00    17280     0.00     0.00  __time_manager_MOD_get_perp_date.constprop.0
+  0.00     59.56     0.00    13824     0.00     0.00  __aer_rad_props_MOD_get_hygro_rad_props.isra.0
+  0.00     59.56     0.00    13610     0.00     0.00  ncio_px_get
+  0.00     59.56     0.00    13610     0.00     0.00  ncio_px_rel
+  0.00     59.56     0.00    13337     0.00     0.00  px_pgin
+  0.00     59.56     0.00    10373     0.00     0.00  __cam_history_MOD_write_inithist
+  0.00     59.56     0.00    10368     0.00     0.00  __convect_deep_MOD_convect_deep_tend.constprop.0
+  0.00     59.56     0.00    10368     0.00     0.00  __radiation_data_MOD_output_rad_data
+  0.00     59.56     0.00    10368     0.00     0.00  dadadj_.isra.0
+  0.00     59.56     0.00     6914     0.00     0.00  __rad_constituents_MOD_rad_cnst_get_info.constprop.0
+  0.00     59.56     0.00     6912     0.00     0.00  __aerosol_intr_MOD_aerosol_drydep_intr.constprop.0.isra.0
+  0.00     59.56     0.00     6912     0.00     0.00  __aerosol_intr_MOD_aerosol_emis_intr.constprop.0
+  0.00     59.56     0.00     6912     0.00     0.00  __cam_diagnostics_MOD_diag_surf
+  0.00     59.56     0.00     6912     0.00     0.00  __gw_drag_MOD_gw_drag_prof.constprop.0.isra.0
+  0.00     59.56     0.00     6912     0.00     0.00  __radiation_MOD_calc_col_mean.lto_priv.0
+  0.00     59.56     0.00     3747     0.00     0.00  __dyn_grid_MOD_get_dyn_grid_parm.part.0
+  0.00     59.56     0.00     3456     0.00     0.00  __aer_rad_props_MOD_aer_rad_props_sw.constprop.0.isra.0
+  0.00     59.56     0.00     3456     0.00     0.00  __radlw_MOD_radclwmx.isra.0
+  0.00     59.56     0.00     1588     0.00     0.00  v1h_get_NC_string
+  0.00     59.56     0.00     1524     0.00     0.00  v1h_get_size_t
+  0.00     59.56     0.00     1113     0.00     0.00  __pio_utils_MOD_check_netcdf.part.0
+  0.00     59.56     0.00      982     0.00     0.00  __m_attrvect_MOD_lsize_
+  0.00     59.56     0.00      938     0.00     0.00  __m_string_MOD_clean_
+  0.00     59.56     0.00      717     0.00     0.00  v1h_get_NCtype
+  0.00     59.56     0.00      709     0.00     0.00  NC_var_shape
+  0.00     59.56     0.00      685     0.00     0.00  v1h_get_NC_attrarray
+  0.00     59.56     0.00      674     0.00     0.00  __m_list_MOD_index_
+  0.00     59.56     0.00      662     0.00     0.00  ncio_spx_free
+  0.00     59.56     0.00      660     0.00     0.00  __m_string_MOD_initc_
+  0.00     59.56     0.00      605     0.00     0.00  __m_list_MOD_get_
+  0.00     59.56     0.00      444     0.00     0.00  __shr_string_mod_MOD_shr_string_listgetnum
+  0.00     59.56     0.00      429     0.00     0.00  __shr_string_mod_MOD_shr_string_listgetindex.constprop.0
+  0.00     59.56     0.00      429     0.00     0.00  __shr_string_mod_MOD_shr_string_listgetindexf
+  0.00     59.56     0.00      362     0.00     0.00  NC_varoffset
+  0.00     59.56     0.00      346     0.00     0.00  __cam_history_support_MOD_lookup_hist_mdim_indicies
+  0.00     59.56     0.00      307     0.00     0.00  NCcoordck.lto_priv.0
+  0.00     59.56     0.00      307     0.00     0.00  f2c_coords
+  0.00     59.56     0.00      269     0.00     0.00  nf_inq_var_.constprop.0
+  0.00     59.56     0.00      250     0.00     0.00  f2c_counts
+  0.00     59.56     0.00      243     0.00     0.00  mergesort_.11.lto_priv.0
+  0.00     59.56     0.00      241     0.00     0.00  NCiocount
+  0.00     59.56     0.00      240     0.00     0.00  __m_mergesorts_MOD_dsort_.constprop.0.isra.0
+  0.00     59.56     0.00      239     0.00     0.00  nf_inq_varid_
+  0.00     59.56     0.00      233     0.00     0.00  __m_attrvect_MOD_indexra_.constprop.0
+  0.00     59.56     0.00      217     0.00     0.00  __nf_mod_MOD_inq_varid_vid
+  0.00     59.56     0.00      200     0.00     0.00  __m_traceback_MOD_gentracebackstring1.constprop.1
+  0.00     59.56     0.00      196     0.00     0.00  __netcdf_MOD_nf90_inquire_variable.constprop.0
+  0.00     59.56     0.00      183     0.00     0.00  v1h_put_size_t
+  0.00     59.56     0.00      175     0.00     0.00  __nf_mod_MOD_inq_varndims_vid
+  0.00     59.56     0.00      169     0.00     0.00  NC_check_name
+  0.00     59.56     0.00      169     0.00     0.00  v1h_put_NC_string
+  0.00     59.56     0.00      168     0.00     0.00  nc_get_vara_double
+  0.00     59.56     0.00      158     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_etimeget.constprop.0
+  0.00     59.56     0.00      158     0.00     0.00  __shr_cal_mod_MOD_shr_cal_ymd2date
+  0.00     59.56     0.00      155     0.00     0.00  __cam_history_MOD_add_default.constprop.0
+  0.00     59.56     0.00      119     0.00     0.00  __nf_mod_MOD_pio_inq_dimid
+  0.00     59.56     0.00      119     0.00     0.00  nf_inq_dimid_
+  0.00     59.56     0.00      112     0.00     0.00  __nf_mod_MOD_pio_inq_dimlen
+  0.00     59.56     0.00      112     0.00     0.00  nf_inq_dim_.constprop.0
+  0.00     59.56     0.00      111     0.00     0.00  __m_list_MOD_init_
+  0.00     59.56     0.00      108     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_chkerr
+  0.00     59.56     0.00       98     0.00     0.00  __piolib_mod_MOD_seterrorhandlingi
+  0.00     59.56     0.00       96     0.00     0.00  __dyn_grid_MOD_get_block_gcol_d
+  0.00     59.56     0.00       94     0.00     0.00  __m_attrvect_MOD_avavsharedattrindexlist_.constprop.0
+  0.00     59.56     0.00       94     0.00     0.00  __m_attrvect_MOD_sharedindicesonetype_.constprop.0
+  0.00     59.56     0.00       94     0.00     0.00  __m_list_MOD_getsharedlistindices_
+  0.00     59.56     0.00       94     0.00     0.00  new_NC_attr.lto_priv.0
+  0.00     59.56     0.00       93     0.00     0.00  __netcdf_MOD_nf90_put_att_text
+  0.00     59.56     0.00       93     0.00     0.00  __pionfatt_mod_MOD_put_att_text
+  0.00     59.56     0.00       86     0.00     0.00  __esmf_timemod_MOD_esmf_timedec
+  0.00     59.56     0.00       80     0.00     0.00  __m_list_MOD_clean_
+  0.00     59.56     0.00       78     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_bcasti0.constprop.1
+  0.00     59.56     0.00       74     0.00     0.00  __cam_history_MOD_addfld.constprop.1
+  0.00     59.56     0.00       70     0.00     0.00  __phys_buffer_MOD_pbuf_add.constprop.0
+  0.00     59.56     0.00       68     0.00     0.00  __netcdf_MOD_nf90_get_var_1d_eightbytereal.constprop.1
+  0.00     59.56     0.00       62     0.00     0.00  __esmf_alarmmod_MOD_esmf_alarmgetringtime.lto_priv.0
+  0.00     59.56     0.00       59     0.00     0.00  __esmf_timemod_MOD_esmf_timeget.constprop.1
+  0.00     59.56     0.00       58     0.00     0.00  v1h_put_NC_attrarray
+  0.00     59.56     0.00       57     0.00     0.00  __netcdf_MOD_nf90_get_var_eightbytereal
+  0.00     59.56     0.00       57     0.00     0.00  __nf_mod_MOD_inq_vardimid_vid.constprop.0.isra.0
+  0.00     59.56     0.00       57     0.00     0.00  __phys_buffer_MOD_pbuf_get_fld_idx.constprop.0
+  0.00     59.56     0.00       57     0.00     0.00  __pionfget_mod_MOD_get_var_0d_double
+  0.00     59.56     0.00       57     0.00     0.00  nf_get_var1_double_.isra.0
+  0.00     59.56     0.00       56     0.00     0.00  nf_def_var_
+  0.00     59.56     0.00       55     0.00     0.00  __m_list_MOD_getall_
+  0.00     59.56     0.00       55     0.00     0.00  __m_traceback_MOD_gentracebackstring2.constprop.2
+  0.00     59.56     0.00       50     0.00     0.00  ncio_px_sync
+  0.00     59.56     0.00       48     0.00     0.00  __netcdf_MOD_nf90_get_var_1d_eightbytereal.constprop.0
+  0.00     59.56     0.00       48     0.00     0.00  __pionfget_mod_MOD_get_var_1d_double
+  0.00     59.56     0.00       48     0.00     0.00  __pionfget_mod_MOD_get_var_1d_double.constprop.0
+  0.00     59.56     0.00       48     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_alarminit.lto_priv.0
+  0.00     59.56     0.00       48     0.00     0.00  getNCv_int.lto_priv.0
+  0.00     59.56     0.00       47     0.00     0.00  __nf_mod_MOD_def_var_md
+  0.00     59.56     0.00       46     0.00     0.00  __seq_comm_mct_MOD_seq_comm_setptrs.constprop.0
+  0.00     59.56     0.00       46     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_bcastl0.constprop.0
+  0.00     59.56     0.00       45     0.00     0.00  __m_attrvect_MOD_init_.constprop.0
+  0.00     59.56     0.00       44     0.00     0.00  __phys_buffer_MOD_pbuf_add.constprop.1
+  0.00     59.56     0.00       42     0.00     0.00  __alloc_mod_MOD_alloc_check_1d_double
+  0.00     59.56     0.00       42     0.00     0.00  __alloc_mod_MOD_dealloc_check_1d_double.constprop.0
+  0.00     59.56     0.00       40     0.00     0.00  __time_manager_MOD_set_time_float_from_date
+  0.00     59.56     0.00       39     0.00     0.00  __esmf_clockmod_MOD_esmf_clockget
+  0.00     59.56     0.00       38     0.00     0.00  __m_globalsegmap_MOD_comp_id_
+  0.00     59.56     0.00       38     0.00     0.00  __repro_sum_mod_MOD_repro_sum.constprop.1
+  0.00     59.56     0.00       38     0.00     0.00  __repro_sum_mod_MOD_repro_sum_tol_exceeded.constprop.0
+  0.00     59.56     0.00       38     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_eclockgetdata.constprop.0
+  0.00     59.56     0.00       38     0.00     0.00  nc_put_vara_double
+  0.00     59.56     0.00       38     0.00     0.00  putNCv_double.lto_priv.0
+  0.00     59.56     0.00       36     0.00     0.00  __shr_file_mod_MOD_shr_file_freeunit
+  0.00     59.56     0.00       36     0.00     0.00  __shr_file_mod_MOD_shr_file_getunit.constprop.0
+  0.00     59.56     0.00       33     0.00     0.00  ncx_len_NC
+  0.00     59.56     0.00       32     0.00     0.00  nc_get_NC
+  0.00     59.56     0.00       31     0.00     0.00  __namelist_utils_MOD_find_group_name
+  0.00     59.56     0.00       31     0.00     0.00  __netcdf_MOD_nf90_put_var_1d_eightbytereal.constprop.0
+  0.00     59.56     0.00       30     0.00     0.00  __m_fccomms_MOD_fc_gatherv_int.constprop.0
+  0.00     59.56     0.00       29     0.00     0.00  __netcdf_MOD_nf90_get_var_3d_eightbytereal.constprop.0
+  0.00     59.56     0.00       29     0.00     0.00  __pionfget_mod_MOD_get_vara_3d_double.constprop.0.isra.0
+  0.00     59.56     0.00       29     0.00     0.00  __pionfget_mod_MOD_get_vara_vdesc_3d_double.constprop.0
+  0.00     59.56     0.00       28     0.00     0.00  __m_globalsegmap_MOD_clean_.constprop.0
+  0.00     59.56     0.00       27     0.00     0.00  __m_generalgrid_MOD_lsize_
+  0.00     59.56     0.00       24     0.00     0.00  MPI_Irecv.isra.0
+  0.00     59.56     0.00       24     0.00     0.00  MPI_Isend.isra.0
+  0.00     59.56     0.00       24     0.00     0.00  __alloc_mod_MOD_alloc_check_1d_int
+  0.00     59.56     0.00       24     0.00     0.00  __m_globalsegmap_MOD_increasing_
+  0.00     59.56     0.00       24     0.00     0.00  __seq_cdata_mod_MOD_seq_cdata_setptrs.constprop.0
+  0.00     59.56     0.00       24     0.00     0.00  f2c_strides
+  0.00     59.56     0.00       24     0.00     0.00  mpi_send_.constprop.0
+  0.00     59.56     0.00       23     0.00     0.00  __seq_comm_mct_MOD_seq_comm_iamin
+  0.00     59.56     0.00       22     0.00     0.00  __cam_pio_utils_MOD_find_iodesc.lto_priv.0
+  0.00     59.56     0.00       22     0.00     0.00  __m_list_MOD_copy_
+  0.00     59.56     0.00       22     0.00     0.00  __netcdf_MOD_nf90_get_var_text.constprop.0
+  0.00     59.56     0.00       22     0.00     0.00  __nf_mod_MOD_inq_varid_vardesc
+  0.00     59.56     0.00       22     0.00     0.00  __pionfget_mod_MOD_get_var_0d_text
+  0.00     59.56     0.00       22     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_bcastc0.constprop.0
+  0.00     59.56     0.00       22     0.00     0.00  getNCvx_char_char
+  0.00     59.56     0.00       22     0.00     0.00  nc_get_vara_text
+  0.00     59.56     0.00       22     0.00     0.00  nc_get_varm_text
+  0.00     59.56     0.00       22     0.00     0.00  nf_get_vars_text_
+  0.00     59.56     0.00       22     0.00     0.00  par_xsum_
+  0.00     59.56     0.00       21     0.00     0.00  __dyn_grid_MOD_get_dyn_grid_parm_real1d
+  0.00     59.56     0.00       21     0.00     0.00  __m_generalgrid_MOD_importrattrdp_
+  0.00     59.56     0.00       21     0.00     0.00  __ncdio_atm_MOD_check_var
+  0.00     59.56     0.00       21     0.00     0.00  __nf_mod_MOD_inquire_variable_vdesc
+  0.00     59.56     0.00       21     0.00     0.00  __pionfput_mod_MOD_put_var_1d_double.constprop.0.isra.0
+  0.00     59.56     0.00       20     0.00     0.00  __cam_history_support_MOD_register_hist_mdim
+  0.00     59.56     0.00       20     0.00     0.00  __m_globalsegmap_MOD_initp_.constprop.0
+  0.00     59.56     0.00       20     0.00     0.00  __m_globalsegmap_MOD_processstorage_.isra.0
+  0.00     59.56     0.00       20     0.00     0.00  __m_list_MOD_exporttochar_
+  0.00     59.56     0.00       20     0.00     0.00  __piodarray_MOD_read_darray_1d_double
+  0.00     59.56     0.00       20     0.00     0.00  mpi_comm_new
+  0.00     59.56     0.00       19     0.00     0.00  __m_attrvect_MOD_indexra_
+  0.00     59.56     0.00       19     0.00     0.00  __nf_mod_MOD_pio_def_dim
+  0.00     59.56     0.00       19     0.00     0.00  __phys_control_MOD_phys_getopts.constprop.0
+  0.00     59.56     0.00       19     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_exchange.constprop.0
+  0.00     59.56     0.00       19     0.00     0.00  __time_manager_MOD_get_step_size
+  0.00     59.56     0.00       19     0.00     0.00  nf_def_dim_
+  0.00     59.56     0.00       18     0.00     0.00  __esmf_timeintervalmod_MOD_esmf_timeintervalprodi
+  0.00     59.56     0.00       18     0.00     0.00  mpi_comm_create_.isra.0
+  0.00     59.56     0.00       18     0.00     0.00  ncio_new.lto_priv.0
+  0.00     59.56     0.00       17     0.00     0.00  NCvnrecs.lto_priv.0
+  0.00     59.56     0.00       17     0.00     0.00  __piolib_mod_MOD_pio_openfile
+  0.00     59.56     0.00       17     0.00     0.00  __pionfatt_mod_MOD_get_att_text
+  0.00     59.56     0.00       17     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_bcastr0.constprop.0
+  0.00     59.56     0.00       17     0.00     0.00  nf_get_att_text_
+  0.00     59.56     0.00       17     0.00     0.00  nf_open_
+  0.00     59.56     0.00       16     0.00     0.00  __alloc_mod_MOD_alloc_check_1d_long.constprop.0
+  0.00     59.56     0.00       16     0.00     0.00  __m_globalsegmap_MOD_copy_
+  0.00     59.56     0.00       16     0.00     0.00  __m_permuter_MOD_permutei_
+  0.00     59.56     0.00       16     0.00     0.00  __netcdf_MOD_nf90_put_var_1d_fourbyteint.constprop.0
+  0.00     59.56     0.00       16     0.00     0.00  __piolib_mod_MOD_closefile
+  0.00     59.56     0.00       16     0.00     0.00  __seq_comm_mct_MOD_seq_comm_iamroot
+  0.00     59.56     0.00       16     0.00     0.00  __seq_flds_mod_MOD_seq_flds_catfields.constprop.0
+  0.00     59.56     0.00       16     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_getdata.constprop.1
+  0.00     59.56     0.00       16     0.00     0.00  __shr_cal_mod_MOD_shr_cal_date2ymd
+  0.00     59.56     0.00       16     0.00     0.00  __time_manager_MOD_timesetymd.lto_priv.0
+  0.00     59.56     0.00       16     0.00     0.00  free_NC.part.0.lto_priv.0
+  0.00     59.56     0.00       16     0.00     0.00  nc_close
+  0.00     59.56     0.00       16     0.00     0.00  nc_put_vara_int
+  0.00     59.56     0.00       16     0.00     0.00  ncio_px_free
+  0.00     59.56     0.00       16     0.00     0.00  putNCv_int.lto_priv.0
+  0.00     59.56     0.00       15     0.00     0.00  __cam_history_MOD_add_default.constprop.1
+  0.00     59.56     0.00       15     0.00     0.00  __cam_pio_utils_MOD_get_phys_decomp_mdnd.constprop.0.isra.0
+  0.00     59.56     0.00       15     0.00     0.00  __piodarray_MOD_read_darray_3d_double
+  0.00     59.56     0.00       15     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_etimeinit
+  0.00     59.56     0.00       15     0.00     0.00  read_NC.lto_priv.0
+  0.00     59.56     0.00       14     0.00     0.00  __iofilemod_MOD_getfil.constprop.0
+  0.00     59.56     0.00       14     0.00     0.00  __m_globalsegmap_MOD_max_nlseg_
+  0.00     59.56     0.00       14     0.00     0.00  __m_globalsegmap_MOD_nlseg_.isra.0
+  0.00     59.56     0.00       14     0.00     0.01  __mct_mod_MOD_mct_rearr_rearrange_fldlist
+  0.00     59.56     0.00       14     0.00     0.00  __nf_mod_MOD_inq_vardimid_vdesc.constprop.0
+  0.00     59.56     0.00       14     0.00     0.00  __nf_mod_MOD_inq_varndims_vdesc
+  0.00     59.56     0.00       14     0.00     0.00  __seq_cdata_mod_MOD_seq_cdata_init.constprop.0
+  0.00     59.56     0.00       14     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_alarmison.constprop.0
+  0.00     59.56     0.00       13     0.00     0.00  __cam_pio_utils_MOD_get_phys_decomp_md1d.constprop.0
+  0.00     59.56     0.00       13     0.00     0.00  __ccsm_comp_mod_MOD_t_drvstartf.constprop.1
+  0.00     59.56     0.00       13     0.00     0.00  __ccsm_comp_mod_MOD_t_drvstopf.constprop.1
+  0.00     59.56     0.00       13     0.00     0.00  __m_globalsegmap_MOD_lsize_
+  0.00     59.56     0.00       12     0.00     0.00  __alloc_mod_MOD_dealloc_check_1d_int
+  0.00     59.56     0.00       12     0.00     0.00  __m_globalsegmap_MOD_initr_.constprop.0
+  0.00     59.56     0.00       12     0.00     0.00  __netcdf_MOD_nf90_get_var_2d_eightbytereal.constprop.2
+  0.00     59.56     0.00       12     0.00     0.00  __pionfget_mod_MOD_get_var_2d_double.constprop.0.isra.0
+  0.00     59.56     0.00       11     0.00     0.00  __error_messages_MOD_alloc_err
+  0.00     59.56     0.00       11     0.00     0.00  __m_attrvect_MOD_exportrattrdp_.constprop.0
+  0.00     59.56     0.00       11     0.00     0.00  __m_string_MOD_str2ch0_
+  0.00     59.56     0.00       11     0.00     0.00  __m_traceback_MOD_gentracebackstring1
+  0.00     59.56     0.00       11     0.00     0.00  __phys_prop_MOD_refindex_aer_init
+  0.00     59.56     0.00       11     0.00     0.00  __pionfput_mod_MOD_put_var_1d_int.constprop.0.isra.0
+  0.00     59.56     0.00       11     0.00     0.00  __rad_constituents_MOD_parse_rad_specifier.constprop.0
+  0.00     59.56     0.00       10     0.00     0.00  __alloc_mod_MOD_dealloc_check_1d_long
+  0.00     59.56     0.00       10     0.00     0.00  __m_attrvect_MOD_exportrlisttochar_
+  0.00     59.56     0.00       10     0.00     0.00  __m_attrvect_MOD_initv_
+  0.00     59.56     0.00       10     0.00     0.00  __m_attrvect_MOD_niattr_
+  0.00     59.56     0.00       10     0.00     0.00  __m_attrvect_MOD_nrattr_
+  0.00     59.56     0.00       10     0.00     0.00  __m_globalsegmap_MOD_init_index_
+  0.00     59.56     0.00       10     0.00     0.00  __m_globalsegmap_MOD_initd_.constprop.0
+  0.00     59.56     0.00       10     0.00     0.00  __m_list_MOD_allocated_
+  0.00     59.56     0.00       10     0.00     0.00  __m_mergesorts_MOD_isort_.constprop.0
+  0.00     59.56     0.00       10     0.00     0.00  __m_mergesorts_MOD_set_
+  0.00     59.56     0.00       10     0.00     0.00  __map_atmocn_mct_MOD_map_ocn2atm_mct.constprop.0
+  0.00     59.56     0.00       10     0.00     0.01  __ncdio_atm_MOD_infld_real_3d.constprop.1
+  0.00     59.56     0.00       10     0.00     0.00  __seq_cdata_mod_MOD_seq_cdata_setptrs.constprop.1
+  0.00     59.56     0.00       10     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_getdata.constprop.0
+  0.00     59.56     0.00        9     0.00     0.00  __ccsm_comp_mod_MOD_t_drvstartf.constprop.0
+  0.00     59.56     0.00        9     0.00     0.00  __ccsm_comp_mod_MOD_t_drvstopf.constprop.0
+  0.00     59.56     0.00        9     0.00     0.00  __diffusion_solver_MOD_vdiff_select.constprop.0
+  0.00     59.56     0.00        9     0.00     0.00  __nf_mod_MOD_def_var_md.constprop.0
+  0.00     59.56     0.00        8     0.00     0.00  __cam_history_MOD_column_init.isra.0
+  0.00     59.56     0.00        8     0.00     0.00  __m_die_MOD_perr1_
+  0.00     59.56     0.00        8     0.00     0.00  __m_generalgrid_MOD_indexra_.constprop.0
+  0.00     59.56     0.00        8     0.00     0.00  __m_list_MOD_charbuffersize_
+  0.00     59.56     0.00        8     0.00     0.00  __m_traceback_MOD_gentracebackstring2.constprop.0
+  0.00     59.56     0.00        8     0.00     0.00  __pionfput_mod_MOD_put_vara_1d_double.constprop.0.isra.0
+  0.00     59.56     0.00        8     0.00     0.00  __pionfput_mod_MOD_put_vara_vdesc_1d_double
+  0.00     59.56     0.00        7     0.00     0.00  __cam_pio_utils_MOD_get_dyn_decomp.constprop.0
+  0.00     59.56     0.00        7     0.00     0.00  __m_attrvect_MOD_init_
+  0.00     59.56     0.00        7     0.00     0.00  __netcdf_MOD_nf90_get_var_5d_eightbytereal.constprop.0
+  0.00     59.56     0.00        7     0.00     0.00  __netcdf_MOD_nf90_inquire_variable
+  0.00     59.56     0.00        7     0.00     0.00  __nf_mod_MOD_inq_vartype_vid
+  0.00     59.56     0.00        7     0.00     0.00  __pio_utils_MOD_check_netcdf.constprop.0
+  0.00     59.56     0.00        7     0.00     0.00  __pionfget_mod_MOD_get_var_vdesc_5d_double.constprop.0.isra.0
+  0.00     59.56     0.00        7     0.00     0.00  __pionfput_mod_MOD_put_var_2d_double.constprop.0.isra.0
+  0.00     59.56     0.00        7     0.00     0.00  __seq_comm_mct_MOD_seq_comm_setcomm.lto_priv.0
+  0.00     59.56     0.00        7     0.00     0.00  __seq_io_mod_MOD_getiotypefromname.constprop.0
+  0.00     59.56     0.00        7     0.00     0.00  __seq_io_mod_MOD_namelist_set.lto_priv.0
+  0.00     59.56     0.00        6     0.00     0.00  __box_rearrange_MOD_box_rearrange_create.constprop.0.isra.0
+  0.00     59.56     0.00        6     0.00     0.00  __calcdecomp_MOD_calcstartandcount
+  0.00     59.56     0.00        6     0.00     0.00  __calcdisplace_mod_MOD_calcdisplace_box.constprop.0.isra.0
+  0.00     59.56     0.00        6     0.00     0.00  __cam_history_MOD_addfld.constprop.2
+  0.00     59.56     0.00        6     0.00     0.00  __chemistry_MOD_chem_is
+  0.00     59.56     0.00        6     0.00     0.00  __esmf_clockmod_MOD_esmf_clockadvance.constprop.1
+  0.00     59.56     0.00        6     0.00     0.11  __m_rearranger_MOD_init_
+  0.00     59.56     0.00        6     0.00     0.00  __ncdio_atm_MOD_infld_real_3d.constprop.0
+  0.00     59.56     0.00        6     0.00     0.00  __perf_mod_MOD_t_adj_detailf
+  0.00     59.56     0.00        6     0.00     0.00  __piolib_mod_MOD_pio_initdecomp_dof.constprop.1
+  0.00     59.56     0.00        6     0.00     0.00  __pionfget_mod_MOD_get_var_vdesc_1d_double
+  0.00     59.56     0.00        6     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_putdata.constprop.1
+  0.00     59.56     0.00        6     0.00     0.00  __seq_rearr_mod_MOD_seq_rearr_avextend.lto_priv.0
+  0.00     59.56     0.00        6     0.00     0.00  __shr_file_mod_MOD_shr_file_setlogunit
+  0.00     59.56     0.00        6     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_maxr0
+  0.00     59.56     0.00        6     0.00     0.00  __shr_mpi_mod_MOD_shr_mpi_minr0
+  0.00     59.56     0.00        6     0.00     0.00  __string_utils_MOD_to_upper
+  0.00     59.56     0.00        6     0.00     0.00  __tracer_data_MOD_get_dimension.lto_priv.0
+  0.00     59.56     0.00        5     0.00     0.00  __inidat_MOD_process_inidat.constprop.0
+  0.00     59.56     0.00        5     0.00     0.00  __m_list_MOD_nitem_
+  0.00     59.56     0.00        5     0.00     0.01  __ncdio_atm_MOD_infld_real_2d.constprop.0
+  0.00     59.56     0.00        5     0.00     0.00  __piodarray_MOD_read_darray_2d_double.constprop.0
+  0.00     59.56     0.00        5     0.00     0.00  __pionfput_mod_MOD_put_vara_vdesc_1d_int
+  0.00     59.56     0.00        5     0.00     0.00  __seq_comm_mct_MOD_seq_comm_joincomm.constprop.0
+  0.00     59.56     0.00        5     0.00     0.00  __time_manager_MOD_get_curr_time
+  0.00     59.56     0.00        5     0.00     0.00  fault_v1hs
+  0.00     59.56     0.00        5     0.00     0.00  timegetdayofmonth_
+  0.00     59.56     0.00        4     0.00     0.00  __cam_pio_utils_MOD_cam_pio_openfile.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __cam_pio_utils_MOD_cam_pio_openfile.part.0
+  0.00     59.56     0.00        4     0.00     0.00  __m_attrvect_MOD_clean_.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __m_attrvect_MOD_initl_
+  0.00     59.56     0.00        4     0.00     0.00  __m_generalgrid_MOD_init_.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __m_globalsegmap_MOD_active_pes_.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __map_atmatm_mct_MOD_map_ccc2xxx_mct.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __netcdf_MOD_nf90_get_var_1d_fourbyteint.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __netcdf_MOD_nf90_get_var_2d_eightbytereal.constprop.1
+  0.00     59.56     0.00        4     0.00     0.00  __pionfget_mod_MOD_get_var_1d_int.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __pionfget_mod_MOD_get_vara_2d_double.constprop.0.isra.0
+  0.00     59.56     0.00        4     0.00     0.00  __pionfget_mod_MOD_get_vara_vdesc_2d_double.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_putdata.constprop.0
+  0.00     59.56     0.00        4     0.00     0.00  __seq_rearr_mod_MOD_seq_rearr_avcreate.isra.0
+  0.00     59.56     0.00        4     0.00     0.00  __seq_rearr_mod_MOD_seq_rearr_gsmapextend.lto_priv.0
+  0.00     59.56     0.00        4     0.00     0.00  __tracer_data_MOD_read_2d_trc.constprop.0.isra.0
+  0.00     59.56     0.00        4     0.00     0.00  nc_get_vara_int
+  0.00     59.56     0.00        3     0.00     0.00  __aircraft_emit_MOD_aircraft_emit_adv.constprop.0
+  0.00     59.56     0.00        3     0.00     4.24  __cam_comp_MOD_cam_run1
+  0.00     59.56     0.00        3     0.00     0.00  __cam_pio_utils_MOD_get_dyn_ldof.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __chem_surfvals_MOD_chem_surfvals_set
+  0.00     59.56     0.00        3     0.00     0.00  __constituents_MOD_cnst_add.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __dycore_MOD_dycore_is.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __dycore_MOD_get_resolution.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __esmf_calendarmod_MOD_esmf_calendarcreate
+  0.00     59.56     0.00        3     0.00     0.00  __iofilemod_MOD_getfil.constprop.1
+  0.00     59.56     0.00        3     0.00     0.00  __m_attrvect_MOD_indexia_
+  0.00     59.56     0.00        3     0.00     0.00  __m_generalgrid_MOD_importiattr_.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __m_mergesorts_MOD_dsortn_.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __map_atmatm_mct_MOD_map_xxx2ccc_mct.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __mean_module_MOD_gmeanxy
+  0.00     59.56     0.00        3     0.00     0.00  __mo_flbc_MOD_flbc_chk
+  0.00     59.56     0.00        3     0.00     0.00  __prescribed_ghg_MOD_prescribed_ghg_adv.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __prescribed_volcaero_MOD_prescribed_volcaero_adv.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __seq_domain_mct_MOD_seq_domain_check_grid_mct.lto_priv.0
+  0.00     59.56     0.00        3     0.00     0.00  __shr_file_mod_MOD_shr_file_setloglevel
+  0.00     59.56     0.00        3     0.00     0.00  __solar_data_MOD_solar_data_advance
+  0.00     59.56     0.00        3     0.00     1.61  __stepon_MOD_stepon_run1.constprop.0
+  0.00     59.56     0.00        3     0.00     0.00  __time_manager_MOD_get_nstep
+  0.00     59.56     0.00        2     0.00     0.00  MPI_Waitall.isra.0
+  0.00     59.56     0.00        2     0.00     2.60  __atm_comp_mct_MOD_atm_init_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __cam_history_MOD_h_zero.isra.0
+  0.00     59.56     0.00        2     0.00     0.04  __cam_history_MOD_wshist
+  0.00     59.56     0.00        2     0.00     0.00  __cam_pio_utils_MOD_get_decomp.constprop.1
+  0.00     59.56     0.00        2     0.00     0.00  __dycore_MOD_dycore_is.constprop.1
+  0.00     59.56     0.00        2     0.00     0.00  __dyn_grid_MOD_get_dyn_grid_parm
+  0.00     59.56     0.00        2     0.00     0.00  __esmf_clockmod_MOD_esmf_clockadvance.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __m_attrvect_MOD_exportilisttochar_
+  0.00     59.56     0.00        2     0.00     0.00  __m_mergesorts_MOD_isortn_.constprop.0
+  0.00     59.56     0.00        2     0.00     0.01  __map_atmocn_mct_MOD_map_atm2ocn_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __map_ocnocn_mct_MOD_map_ccc2xxx_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.01  __mrg_x2a_mct_MOD_mrg_x2a_run_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __pft_module_MOD_pft_cf.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __phys_control_MOD_waccmx_is.constprop.0
+  0.00     59.56     0.00        2     0.00     0.01  __piodarray_MOD_write_darray_1d_double
+  0.00     59.56     0.00        2     0.00     0.01  __piodarray_MOD_write_darray_3d_double.constprop.0
+  0.00     59.56     0.00        2     0.00     0.01  __piodarray_MOD_write_darray_nf_double.constprop.0.isra.0
+  0.00     59.56     0.00        2     0.00     0.00  __pionfput_mod_MOD_put_vara_vdesc_1d_text.constprop.0.isra.0
+  0.00     59.56     0.00        2     0.00     0.00  __radiation_MOD_radiation_nextsw_cday
+  0.00     59.56     0.00        2     0.00     0.00  __seq_domain_mct_MOD_domain_areafactinit_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_flux_mct_MOD_seq_flux_ocnalb_mct.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_frac_mct_MOD_seq_frac_check.lto_priv.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_io_mod_MOD_seq_io_getiosys.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_io_mod_MOD_seq_io_getiotype.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_rearr_mod_MOD_seq_rearr_gsmapidentical
+  0.00     59.56     0.00        2     0.00     0.23  __seq_rearr_mod_MOD_seq_rearr_init.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_alarmison.constprop.1
+  0.00     59.56     0.00        2     0.00     0.00  __stepon_MOD_stepon_run3.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __tracer_data_MOD_find_times
+  0.00     59.56     0.00        2     0.00     0.00  __tracer_data_MOD_open_trc_datafile.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __tracer_data_MOD_specify_fields.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  __tracer_data_MOD_trcdata_init.constprop.0
+  0.00     59.56     0.00        2     0.00     0.00  nc_put_vara_text
+  0.00     59.56     0.00        2     0.00     0.00  nc_put_varm_text
+  0.00     59.56     0.00        2     0.00     0.00  ncx_put_NC
+  0.00     59.56     0.00        2     0.00     0.00  putNCvx_char_char
+  0.00     59.56     0.00        1     0.00     0.00  NC_endef.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __aer_rad_props_MOD_aer_rad_props_init
+  0.00     59.56     0.00        1     0.00     0.00  __aerodep_flx_MOD_aerodep_flx_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __atm_comp_mct_MOD_atm_domain_mct.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __buffer_MOD_initialize_buffer
+  0.00     59.56     0.00        1     0.00     0.00  __cam_cpl_indices_MOD_cam_cpl_indices_set
+  0.00     59.56     0.00        1     0.00     0.00  __cam_history_MOD_bld_htapefld_indices.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __cam_history_MOD_bld_outfld_hash_tbls.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.06  __cam_history_MOD_h_define.isra.0
+  0.00     59.56     0.00        1     0.00     0.00  __cam_history_MOD_setup_interpolation_and_define_vector_compliments.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __cam_pio_utils_MOD_cam_pio_createfile
+  0.00     59.56     0.00        1     0.00     0.00  __cam_pio_utils_MOD_clean_iodesc_list
+  0.00     59.56     0.00        1     0.00     0.00  __camsrfexch_types_MOD_atm2hub_alloc.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __ccsm_comp_mod_MOD_ccsm_final
+  0.00     59.56     0.00        1     0.00     6.01  __ccsm_comp_mod_MOD_ccsm_init
+  0.00     59.56     0.00        1     0.00     0.01  __ccsm_comp_mod_MOD_ccsm_pre_init
+  0.00     59.56     0.00        1     0.00     9.30  __ccsm_comp_mod_MOD_ccsm_run
+  0.00     59.56     0.00        1     0.00     0.00  __ccsm_comp_mod_MOD_seq_ccsm_printlogheader.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __chem_surfvals_MOD_chem_surfvals_init
+  0.00     59.56     0.00        1     0.00     0.00  __chem_surfvals_MOD_chem_surfvals_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __chem_surfvals_MOD_chem_surfvals_set.part.0
+  0.00     59.56     0.00        1     0.00     0.00  __cldwat_MOD_inimc.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __cloud_fraction_MOD_cldfrc_init
+  0.00     59.56     0.00        1     0.00     0.00  __comsrf_MOD_initialize_comsrf
+  0.00     59.56     0.00        1     0.00     0.00  __constituents_MOD_cnst_chk_dim
+  0.00     59.56     0.00        1     0.00     0.00  __convect_shallow_MOD_convect_shallow_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __convect_shallow_MOD_convect_shallow_use_shfrc
+  0.00     59.56     0.00        1     0.00     0.00  __cospsimulator_intr_MOD_cospsimulator_intr_init
+  0.00     59.56     0.00        1     0.00     0.00  __cospsimulator_intr_MOD_cospsimulator_intr_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __diffusion_solver_MOD_init_vdiff.constprop.0
+  0.00     59.56     0.00        1     0.00     0.07  __dyn_comp_MOD_dyn_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __dyn_grid_MOD_get_horiz_grid_d
+  0.00     59.56     0.00        1     0.00     0.00  __dyn_grid_MOD_get_horiz_grid_d.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __esmf_stubs_MOD_esmf_initialize.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __filenames_MOD_interpret_filename_spec.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __fv_control_mod_MOD_dyn_readnl.part.0.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __gw_drag_MOD_gw_inti.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __hycoef_MOD_hycoef_init
+  0.00     59.56     0.00        1     0.00     0.00  __m_generalgrid_MOD_clean_
+  0.00     59.56     0.00        1     0.00     0.00  __m_generalgrid_MOD_initgg_
+  0.00     59.56     0.00        1     0.00     0.12  __map_atmocn_mct_MOD_map_atm2ocn_init_mct.constprop.0
+  0.00     59.56     0.00        1     0.00     0.11  __map_atmocn_mct_MOD_map_ocn2atm_init_mct.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __map_ocnocn_mct_MOD_map_xxx2ccc_mct.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __netcdf_MOD_nf90_put_att_fourbyteint.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __nf_mod_MOD_pio_enddef
+  0.00     59.56     0.00        1     0.00     0.00  __ocn_comp_mct_MOD_ocn_init_mct.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __perf_mod_MOD_t_initf.part.0.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __perf_mod_MOD_t_prf.part.0.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __perf_utils_MOD_find_group_name.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __perf_utils_MOD_shr_file_freeunit
+  0.00     59.56     0.00        1     0.00     0.00  __perf_utils_MOD_shr_file_getunit
+  0.00     59.56     0.00        1     0.00     0.00  __phys_buffer_MOD_pbuf_print
+  0.00     59.56     0.00        1     0.00     0.00  __phys_control_MOD_phys_ctl_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __phys_grid_MOD_create_chunks.constprop.0
+  0.00     59.56     0.00        1     0.00     0.01  __phys_grid_MOD_phys_grid_init
+  0.00     59.56     0.00        1     0.00     0.12  __phys_prop_MOD_physprop_init
+  0.00     59.56     0.00        1     0.00     0.00  __physconst_MOD_physconst_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __piolib_mod_MOD_createfile
+  0.00     59.56     0.00        1     0.00     0.00  __piolib_mod_MOD_freedecomp_ios
+  0.00     59.56     0.00        1     0.00     0.00  __piolib_mod_MOD_seterrorhandlingf.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __piolib_mod_MOD_seterrorhandlingf.constprop.1
+  0.00     59.56     0.00        1     0.00     0.00  __pionfatt_mod_MOD_put_att_1d_int.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __prescribed_aero_MOD_prescribed_aero_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __prescribed_ghg_MOD_prescribed_ghg_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __prescribed_ozone_MOD_prescribed_ozone_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __prescribed_volcaero_MOD_prescribed_volcaero_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.12  __rad_constituents_MOD_rad_cnst_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __rad_constituents_MOD_rad_cnst_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.01  __radae_MOD_radae_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.01  __radiation_MOD_radiation_init
+  0.00     59.56     0.00        1     0.00     0.00  __rayleigh_friction_MOD_rayleigh_friction_init
+  0.00     59.56     0.00        1     0.00     0.00  __ref_pres_MOD_ref_pres_init
+  0.00     59.56     0.00        1     0.00     0.00  __runtime_opts_MOD_read_namelist.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __sat_hist_MOD_sat_hist_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.01  __seq_comm_mct_MOD_seq_comm_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_comm_mct_MOD_seq_comm_printcomms
+  0.00     59.56     0.00        1     0.00     0.00  __seq_diag_mct_MOD_seq_diag_zero_mct
+  0.00     59.56     0.00        1     0.00     0.01  __seq_domain_mct_MOD_seq_domain_check_mct.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_drydep_mod_MOD_seq_drydep_init
+  0.00     59.56     0.00        1     0.00     0.00  __seq_drydep_mod_MOD_seq_drydep_read.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_flds_indices_MOD_seq_flds_indices_set
+  0.00     59.56     0.00        1     0.00     0.00  __seq_flds_mod_MOD_seq_flds_set
+  0.00     59.56     0.00        1     0.00     0.00  __seq_flux_mct_MOD_seq_flux_init_mct
+  0.00     59.56     0.00        1     0.00     0.02  __seq_frac_mct_MOD_seq_frac_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_infodata_mod_MOD_seq_infodata_print.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_io_mod_MOD_seq_io_init1.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_clockinit.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __seq_timemgr_mod_MOD_seq_timemgr_clockprint.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __shr_cal_mod_MOD_shr_cal_calendarname.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __shr_orb_mod_MOD_shr_orb_params
+  0.00     59.56     0.00        1     0.00     0.00  __solar_data_MOD_solar_data_readnl.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  __stratiform_MOD_stratiform_init
+  0.00     59.56     0.00        1     0.00     0.00  __time_manager_MOD_get_curr_date
+  0.00     59.56     0.00        1     0.00     0.00  __time_manager_MOD_init_calendar.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __time_manager_MOD_initialize_clock.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __time_manager_MOD_timemgr_print.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  __tropopause_MOD_tropopause_init
+  0.00     59.56     0.00        1     0.00     0.02  __tropopause_MOD_tropopause_read_file
+  0.00     59.56     0.00        1     0.00     0.00  __vertical_diffusion_MOD_vertical_diffusion_init
+  0.00     59.56     0.00        1     0.00     0.00  __zm_conv_intr_MOD_zm_conv_init.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  dryairm_.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  history_defaults.1.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  initcom_
+  0.00     59.56     0.00        1     0.00     0.00  initindx_
+  0.00     59.56     0.00        1     0.00    15.32  main
+  0.00     59.56     0.00        1     0.00     0.00  mpi_init_fort_.constprop.0.isra.0
+  0.00     59.56     0.00        1     0.00     0.00  ncx_pad_putn_Iint.lto_priv.0
+  0.00     59.56     0.00        1     0.00     0.00  nf_enddef_.isra.0
+  0.00     59.56     0.00        1     0.00     0.00  nf_put_att_int_.constprop.0
+  0.00     59.56     0.00        1     0.00     0.00  nf_set_fill_.constprop.0.isra.0
+  0.00     59.56     0.00        1     0.00     0.00  write_numrecs

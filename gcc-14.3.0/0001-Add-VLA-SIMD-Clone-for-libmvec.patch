@@ -1,0 +1,440 @@
+Subject: [PATCH] Add SIMD Clone for libmvec
+
+---
+ gcc/config/riscv/riscv.cc | 392 +++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 391 insertions(+), 1 deletion(-)
+
+diff --git a/gcc/config/riscv/riscv.cc b/gcc/config/riscv/riscv.cc
+index 3e819b3eb..6ff6030fd 100644
+--- a/gcc/config/riscv/riscv.cc
++++ b/gcc/config/riscv/riscv.cc
+@@ -22,6 +22,7 @@ along with GCC; see the file COPYING3.  If not see
+ #define IN_TARGET_CODE 1
+ 
+ #define INCLUDE_STRING
++#include <cmath>
+ #include "config.h"
+ #include "system.h"
+ #include "coretypes.h"
+@@ -75,6 +76,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include "gcse.h"
+ #include "tree-dfa.h"
+ #include "target-globals.h"
++#include "cgraph.h"
+ 
+ /* This file should be included last.  */
+ #include "target-def.h"
+@@ -5293,7 +5295,9 @@ riscv_vector_type_p (const_tree type)
+ {
+   /* Currently, only builtin scalabler vector type is allowed, in the future,
+      more vector types may be allowed, such as GNU vector type, etc.  */
+-  return riscv_vector::builtin_type_p (type);
++  if(!type)
++    return false;
++  return riscv_vector::builtin_type_p (type) || VECTOR_TYPE_P (type);
+ }
+ 
+ static unsigned int
+@@ -11618,6 +11622,382 @@ bool need_shadow_stack_push_pop_p ()
+   return is_zicfiss_p () && riscv_save_return_addr_reg_p ();
+ }
+ 
++/* Return true for types that could be supported as SIMD return or
++   argument types.  */
++
++static bool
++supported_simd_type (tree t)
++{
++  if (SCALAR_FLOAT_TYPE_P (t) || INTEGRAL_TYPE_P (t))
++    {
++      HOST_WIDE_INT s = tree_to_shwi (TYPE_SIZE_UNIT (t));
++      return s == 1 || s == 2 || s == 4 || s == 8;
++    }
++  return false;
++}
++
++static unsigned
++lane_size (cgraph_simd_clone_arg_type clone_arg_type, tree type)
++{
++  gcc_assert (clone_arg_type != SIMD_CLONE_ARG_TYPE_MASK);
++
++  if (INTEGRAL_TYPE_P (type)
++      || SCALAR_FLOAT_TYPE_P (type))
++    switch (TYPE_PRECISION (type) / BITS_PER_UNIT)
++      {
++      default:
++	break;
++      case 1:
++      case 2:
++      case 4:
++      case 8:
++	return TYPE_PRECISION (type);
++      }
++  gcc_unreachable ();
++}
++
++/* Map internal LMUL placeholder chars to RISC-V libmvec ABI strings.
++   Fractional LMUL (mf8, mf4, mf2) allow packing multiple elements per
++   vector register when SEW is small. Integer LMUL (m1-m8) scale the
++   vector length up to 8x, utilizing multiple registers.  */
++static const char *
++decode_rvv_lmul_str (char mangle_char)
++{
++  switch (mangle_char)
++    {
++    case 'c': return "f8";
++    case 'b': return "f4";
++    case 'a': return "f2";
++    case '1': return "1";
++    case '2': return "2";
++    case '4': return "4";
++    case '8': return "8";
++    default: return NULL;
++    }
++}
++
++/* Implement TARGET_SIMD_CLONE_COMPUTE_VECSIZE_AND_SIMDLEN.
++   
++   For RISC-V RVV, we generate multiple SIMD clone variants based on
++   LMUL (Length Multiplier). RVV is a VLA (Variable Length Architecture)
++   where the vector length (VL) is determined at runtime by VLMAX = 
++   VLEN * LMUL / SEW. We export clones for fractional LMUL (mf8-mf2) 
++   when SEW permits, and integer LMUL (m1-m8).
++   
++   The simdlen computed here represents the number of elements per vector
++   register group, calculated as TARGET_MIN_VLEN * LMUL / SEW.  */
++static int
++riscv_simd_clone_compute_vecsize_and_simdlen (struct cgraph_node *node,
++					struct cgraph_simd_clone *clonei,
++					tree base_type ATTRIBUTE_UNUSED,
++					int num, bool explicit_p)
++{
++  tree t, ret_type;
++  unsigned int elt_bit = 0;
++  unsigned HOST_WIDE_INT const_simdlen;
++
++  if (!TARGET_VECTOR)
++    return 0;
++
++  if (maybe_ne (clonei->simdlen, 0U)
++      && clonei->simdlen.is_constant (&const_simdlen)
++      && (const_simdlen < 2
++	  || const_simdlen > 1024
++	  || (const_simdlen & (const_simdlen - 1)) != 0))
++    {
++      if (explicit_p)
++	warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++		    "unsupported simdlen %wd", const_simdlen);
++      return 0;
++    }
++
++  ret_type = TREE_TYPE (TREE_TYPE (node->decl));
++  if (TREE_CODE (ret_type) != VOID_TYPE
++      && !supported_simd_type (ret_type))
++    {
++      if (!explicit_p)
++	;
++      else if (COMPLEX_FLOAT_TYPE_P (ret_type))
++	warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++		    "GCC does not currently support return type %qT "
++		    "for simd", ret_type);
++      else
++	warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++		    "unsupported return type %qT for simd",
++		    ret_type);
++      return 0;
++    }
++
++  auto_vec<std::pair <tree, unsigned int>> vec_elts (clonei->nargs + 1);
++  if (TREE_CODE (ret_type) != VOID_TYPE)
++    {
++      elt_bit = lane_size (SIMD_CLONE_ARG_TYPE_VECTOR, ret_type);
++      vec_elts.safe_push (std::make_pair (ret_type, elt_bit));
++    }
++
++  int i;
++  tree type_arg_types = TYPE_ARG_TYPES (TREE_TYPE (node->decl));
++  bool decl_arg_p = (node->definition || type_arg_types == NULL_TREE);
++  for (t = (decl_arg_p ? DECL_ARGUMENTS (node->decl) : type_arg_types), i = 0;
++       t && t != void_list_node; t = TREE_CHAIN (t), i++)
++    {
++      tree arg_type = decl_arg_p ? TREE_TYPE (t) : TREE_VALUE (t);
++      if (clonei->args[i].arg_type != SIMD_CLONE_ARG_TYPE_UNIFORM
++	  && !supported_simd_type (arg_type))
++	{
++	  if (!explicit_p)
++	    ;
++	  else if (COMPLEX_FLOAT_TYPE_P (ret_type))
++	    warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++			"GCC does not currently support argument type %qT "
++			"for simd", arg_type);
++	  else
++	    warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++			"unsupported argument type %qT for simd",
++			arg_type);
++	  return 0;
++	}
++      unsigned lane_bits = lane_size (clonei->args[i].arg_type, arg_type);
++      if (clonei->args[i].arg_type == SIMD_CLONE_ARG_TYPE_VECTOR)
++	vec_elts.safe_push (std::make_pair (arg_type, lane_bits));
++      if (!elt_bit)
++	elt_bit = lane_bits;
++      if (elt_bit != lane_bits)
++	return 0;
++    }
++
++  if (!elt_bit)
++    return 0;
++
++  /* Ensure VLEN >= SEW to avoid illegal configurations.  */
++  if ((unsigned int) TARGET_MIN_VLEN < elt_bit)
++    return 0;
++
++  /* Precompute all valid variants for this SEW.
++     Variants include both fractional and integer LMUL values.
++     Fractional LMUL is only valid when SEW * LMUL >= 8 (i.e., at least
++     one byte per vector register).  */
++  typedef struct {
++    char mangle;
++    poly_uint64 simdlen;
++    const char *lmul_str;
++  } riscv_clone_variant;
++
++  auto_vec<riscv_clone_variant> variants;
++  poly_uint64 base_len = exact_div (poly_uint64 (TARGET_MIN_VLEN), elt_bit);
++  
++  unsigned HOST_WIDE_INT base_const;
++  gcc_assert (base_len.is_constant (&base_const));
++
++  /* Fractional LMUL: requires base_len >= denominator to ensure
++     at least one element per vector.  */
++  if (elt_bit <= 8 && base_const >= 8)
++    variants.safe_push ({'c', exact_div (base_len, 8), "f8"});
++  if (elt_bit <= 16 && base_const >= 4)
++    variants.safe_push ({'b', exact_div (base_len, 4), "f4"});
++  if (elt_bit <= 32 && base_const >= 2)
++    variants.safe_push ({'a', exact_div (base_len, 2), "f2"});
++  variants.safe_push ({'1', base_len, "1"});
++  variants.safe_push ({'2', base_len * 2, "2"});
++  variants.safe_push ({'4', base_len * 4, "4"});
++  variants.safe_push ({'8', base_len * 8, "8"});
++
++  /* Filter out variants with simdlen < 2, as vectorizing a single
++     element provides no benefit.  */
++  unsigned j = 0;
++  while (j < variants.length ())
++    {
++      unsigned HOST_WIDE_INT len_const;
++      if (variants[j].simdlen.is_constant (&len_const) && len_const < 2)
++	{
++	  if (explicit_p && maybe_ne (clonei->simdlen, 0U))
++	    {
++	      unsigned HOST_WIDE_INT user_simdlen;
++	      if (clonei->simdlen.is_constant (&user_simdlen) 
++	          && user_simdlen == len_const)
++		warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++			    "requested simdlen %wd too small for "
++			    "RISC-V V vectorization", user_simdlen);
++	    }
++	  variants.ordered_remove (j);
++	}
++      else
++	j++;
++    }
++
++  int count = variants.length ();
++  if (count == 0)
++    {
++      if (explicit_p)
++	{
++	  if (known_eq (clonei->simdlen, 0U))
++	    warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++			"RISC-V RVV cannot vectorize type %qT with "
++			"current VLEN configuration", 
++			vec_elts[0].first);
++	  else
++	    warning_at (DECL_SOURCE_LOCATION (node->decl), 0,
++			"requested simdlen not supported for type %qT "
++			"on RISC-V RVV", vec_elts[0].first);
++	}
++      return 0;
++    }
++  
++  if (num < 0)
++    return count;
++
++  if (num >= count)
++    return 0;
++
++  /* Populate the selected variant.  */
++  clonei->vecsize_mangle = variants[num].mangle;
++  clonei->simdlen = variants[num].simdlen;
++  
++  clonei->mask_mode = VOIDmode;
++  clonei->vecsize_int = 0;
++  clonei->vecsize_float = 0;
++
++  return count;
++}
++
++/* Implement TARGET_SIMD_CLONE_ADJUST.
++   
++   RISC-V RVV libmvec ABI requires symbols of the form:
++     _ZGVr<lmul>N<x>v_<name>
++   where <lmul> is "f8", "f4", "f2", "1", "2", "4", or "8".
++   
++   This conflicts with GCC's default simd_clone_mangle which:
++   1. Uses a single character for the architecture/variant (cannot encode "f2")
++   2. Appends a ".simdclone.N" suffix to DECL_NAME to distinguish variants
++   
++   Since cgraph_simd_clone lacks 'orig_fndecl' in GCC 14, we cannot access
++   the unmangled base name directly. As a workaround, we strip the
++   ".simdclone.N" suffix from DECL_NAME and manually construct the ABI-
++   compliant symbol name.
++   
++   FIXME: This relies on GCC's internal ".simdclone" naming convention.
++   If GCC changes this suffix, this workaround will break. Future versions
++   should use orig_fndecl or equivalent field when available.  */
++static void
++riscv_simd_clone_adjust (struct cgraph_node *node)
++{
++  struct cgraph_simd_clone *clone_info = node->simdclone;
++  const char *lmul_str = decode_rvv_lmul_str (clone_info->vecsize_mangle);
++  if (!lmul_str)
++    return;
++
++  unsigned int n;
++  pretty_printer pp;
++
++  /* Construct RISC-V specific mangling prefix.  */
++  pp_string (&pp, "_ZGVr");
++  pp_string (&pp, lmul_str);
++  pp_character (&pp, clone_info->inbranch ? 'M' : 'N');
++  pp_character (&pp, 'x');   /* VLA (Variable Length) marker.  */
++
++  for (n = 0; n < clone_info->nargs; ++n)
++    {
++      struct cgraph_simd_clone_arg arg = clone_info->args[n];
++      switch (arg.arg_type)
++	{
++	case SIMD_CLONE_ARG_TYPE_UNIFORM:
++	  pp_character (&pp, 'u');
++	  break;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_CONSTANT_STEP:
++	  pp_character (&pp, 'l');
++	  goto mangle_linear;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_REF_CONSTANT_STEP:
++	  pp_character (&pp, 'R');
++	  goto mangle_linear;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_VAL_CONSTANT_STEP:
++	  pp_character (&pp, 'L');
++	  goto mangle_linear;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_UVAL_CONSTANT_STEP:
++	  pp_character (&pp, 'U');
++	  goto mangle_linear;
++	mangle_linear:
++	  gcc_assert (arg.linear_step != 0);
++	  if (arg.linear_step > 1)
++	    pp_unsigned_wide_integer (&pp, arg.linear_step);
++	  else if (arg.linear_step < 0)
++	    {
++	      pp_character (&pp, 'n');
++	      pp_unsigned_wide_integer (&pp, (-(unsigned HOST_WIDE_INT)
++					      arg.linear_step));
++	    }
++	  break;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_VARIABLE_STEP:
++	  pp_string (&pp, "ls");
++	  pp_unsigned_wide_integer (&pp, arg.linear_step);
++	  break;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_REF_VARIABLE_STEP:
++	  pp_string (&pp, "Rs");
++	  pp_unsigned_wide_integer (&pp, arg.linear_step);
++	  break;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_VAL_VARIABLE_STEP:
++	  pp_string (&pp, "Ls");
++	  pp_unsigned_wide_integer (&pp, arg.linear_step);
++	  break;
++	case SIMD_CLONE_ARG_TYPE_LINEAR_UVAL_VARIABLE_STEP:
++	  pp_string (&pp, "Us");
++	  pp_unsigned_wide_integer (&pp, arg.linear_step);
++	  break;
++	default:
++	  pp_character (&pp, 'v');
++	}
++      if (arg.alignment)
++	{
++	  pp_character (&pp, 'a');
++	  pp_decimal_int (&pp, arg.alignment);
++	}
++    }
++
++  pp_underscore (&pp);
++
++  /* Strip ".simdclone.N" suffix added by GCC middle-end to get the
++     base function name (e.g., "exp" from "exp.simdclone.2").  */
++  const char *name = IDENTIFIER_POINTER (DECL_NAME (node->decl));  
++  const char *suffix = strstr(name, ".simdclone");
++  if (suffix)
++    {
++      pp_append_text (&pp, name, suffix);
++    }
++  else
++    {
++      pp_string (&pp, name);
++    }
++  
++  const char *str = pp_formatted_text (&pp);
++
++  for (struct cgraph_node *clone = node->simd_clones; clone;
++       clone = clone->simdclone->next_clone)
++    if (strcmp (IDENTIFIER_POINTER (DECL_ASSEMBLER_NAME (clone->decl)), str) == 0)
++      return;
++
++  SET_DECL_ASSEMBLER_NAME (node->decl, get_identifier (str));
++}
++
++/* Implement TARGET_SIMD_CLONE_USABLE.  */
++static int
++riscv_simd_clone_usable (struct cgraph_node *node)
++{
++  switch (node->simdclone->vecsize_mangle)
++    {
++    case 'c': /* mf8 */
++    case 'b': /* mf4 */
++    case 'a': /* mf2 */
++    case '1': /* m1 */
++    case '2': /* m2 */
++    case '4': /* m4 */
++    case '8': /* m8 */
++      if (!TARGET_VECTOR)
++	return -1; 
++      return 0;
++    default:
++      gcc_unreachable ();
++    }
++}
++
+ /* Initialize the GCC target structure.  */
+ #undef TARGET_ASM_ALIGNED_HI_OP
+ #define TARGET_ASM_ALIGNED_HI_OP "\t.half\t"
+@@ -11973,6 +12353,16 @@ bool need_shadow_stack_push_pop_p ()
+ #undef TARGET_GET_RAW_RESULT_MODE
+ #define TARGET_GET_RAW_RESULT_MODE riscv_get_raw_result_mode
+ 
++#undef TARGET_SIMD_CLONE_COMPUTE_VECSIZE_AND_SIMDLEN
++#define TARGET_SIMD_CLONE_COMPUTE_VECSIZE_AND_SIMDLEN \
++  riscv_simd_clone_compute_vecsize_and_simdlen
++
++#undef TARGET_SIMD_CLONE_ADJUST
++#define TARGET_SIMD_CLONE_ADJUST riscv_simd_clone_adjust
++
++#undef TARGET_SIMD_CLONE_USABLE
++#define TARGET_SIMD_CLONE_USABLE riscv_simd_clone_usable
++
+ struct gcc_target targetm = TARGET_INITIALIZER;
+ 
+ #include "gt-riscv.h"
+-- 
+2.43.0
+
